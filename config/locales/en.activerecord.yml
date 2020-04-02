@@ -21,6 +21,10 @@ en:
       mandatory: mandatory - signature needed
       optional: optional - signature not needed
   activerecord:
+    successfull:
+      models:
+        policy_manager/anonymize_request:
+          created: "%{model} was successfully created."
     errors:
       models:
         policy_manager/term:
