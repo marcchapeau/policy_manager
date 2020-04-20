@@ -19,8 +19,9 @@ module PolicyManager
       opts = { from: Config.from_email, to: Config.dpo_email, subject: I18n.t("policy_manager.policy_manager_admin_mailer.portability_requested.subject") }
       
       set_mail_lang
-
-      send_mail(opts)
+      I18n.with_locale(:en) do
+        send_mail(opts)
+      end
     end
 
     def anonymize_requested(anonymize_request_id)
@@ -37,7 +38,7 @@ module PolicyManager
     private
 
     def set_mail_lang
-      I18n.locale = :en
+      #I18n.locale = :en
     end
 
   end
